@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Search Employee</h1>
+    <div class="search-box">
+        <form action="/search" method="POST">
+            <lable>Employee Name:</lable>
+            <input type="text" name="search_name" placeholder="enter employee name"
+            value="{{search_type}}" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <!--search result-->
+        { % if employees % }
+        <div class="rersult">
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>fullname</th>
+                    <th>email</th>
+                    <th>department</th>
+                    <th>phone</th>
+                </tr>
+                { % for employee in employees % }
+                <tr>
+                    <th>{{employee[id]}}</th>
+                    <th>{{employee[fullname}}</th>
+                    <th>{{employee[email]}}</th>
+                    <th>{{employee[department]}}</th>
+                    <th>{{employee[phone]}}</th>
+                </tr>
+                { % endfor % }
+            </table>
+        </div>
+        { % elif search_name % }
+        <p class="no result">
+            no employee found with the name "{{search_name}}"
+        </p>
+        </div>
+        
+        { % endif %}
+    
+    
+</body>
+</html>

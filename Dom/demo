@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM manipulation</title>
+    </head>
+    <body>
+        <h2 id="title">hello</h2>
+        <p id="text">this is old text.</p>
+        <button onclick="changetext()">Click Me</button>
+        <script>
+        function changetext()
+        {
+        // 1.getElementId
+            document.getElementById("title").innerHTML="welcome";
+            document.getElementById("text").innerHTML="text changed succesfully!";
+        }
+        </script>
+    </body>
+</html>
